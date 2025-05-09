@@ -4,6 +4,8 @@ const buttons = document.querySelectorAll("button");
 
 let current = ""; // Ce que je suis en train d'écrire
 
+//je souhaite changer * en X
+
 // 2. On ajoute un écouteur à chaque bouton
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -19,9 +21,10 @@ buttons.forEach((button) => {
     // 4. Si je clique sur "=", je calcule le résultat
     if (value === "=") {
       try {
-        const result = Function('"use strict"; return (' + current + ")")();
-        display.textContent = result;
-        current = result.toString(); // On continue avec le résultat
+        display.textContent = eval(current);
+        // const result = Function('"use strict"; return (' + current + ")")();
+        // display.textContent = result;
+        // current = result.toString(); // On continue avec le résultat
       } catch {
         display.textContent = "Erreur";
         current = "";
