@@ -4,73 +4,109 @@
   margin: 0;
   padding: 0;
 }
+
 body {
-  height: 100vh;
-  width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(./fantasy.jpg);
-  background-position: center;
-  background-size: cover;
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #b3e6ff 0%, #f7d6ff 100%);
+  background-image: url(./unicornIsMagic.jpeg);
+  background-position: left;
+  background-size: contain;
   display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Sour Gummy";
+  font-family: "Sour Gummy", cursive;
   font-weight: bold;
+  position: relative;
 }
 
 .calculatrice {
-  background: #ffa600b2;
-  opacity: 0.8;
-  border-radius: 20px;
-  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.5);
-  padding: 30px;
-  width: 300px;
+  background: linear-gradient(135deg, #ffe6fa 0%, #fffbe6 100%);
+  border: 4px solid #ffb6e6;
+  border-radius: 40px;
+  box-shadow: 0 0 40px 10px #c7bfff99, 0 0 0 8px #ffd6f7 inset;
+  padding: 32px 28px;
+  width: 320px;
+  opacity: 0.95;
+  position: relative;
+  right: -30%;
 }
 
 .display {
-  background: #920131;
-  color: #ffffff;
-  font-size: 3em;
-  padding: 10px;
-  border-radius: 20px;
-  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.5);
+  background: #fff;
+  color: #a259c3;
+  font-size: 2.5em;
+  padding: 16px 12px;
+  border-radius: 24px;
+  box-shadow: 0 0 16px 2px #ffd6f7, 0 0 0 4px #b3e6ff inset;
   text-align: right;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  font-family: "Sour Gummy", cursive;
+  letter-spacing: 2px;
 }
 
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  gap: 18px;
 }
 
 button {
-  font-size: 2em;
-  padding: 10px;
+  font-size: 1.7em;
+  padding: 14px;
   border: none;
   border-radius: 50%;
-  background: #920131;
-  color: white;
-  font-family: "Sour Gummy";
-  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, #ffb6e6 0%, #ffe6fa 100%);
+  color: #a259c3;
+  font-family: "Sour Gummy", cursive;
+  box-shadow: 0 0 12px 2px #ffd6f7, 0 0 0 4px #b3e6ff inset;
   cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+  position: relative;
 }
 button:hover {
-  background-color: rgba(60, 5, 35, 0.2);
+  background: linear-gradient(135deg, #fffbe6 0%, #b3e6ff 100%);
+  color: #ffb6e6;
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 0 24px 4px #ffd6f7, 0 0 0 6px #a259c3 inset;
 }
 
 .buttons .c {
-  background-color: rgba(80, 2, 41);
+  background: linear-gradient(135deg, #ffe066 0%, #fffbe6 100%);
+  color: #ff6f91;
+  box-shadow: 0 0 12px 2px #ffe066, 0 0 0 4px #fffbe6 inset;
 }
 .buttons .egal {
-  background-color: rgb(80, 2, 41);
+  background: linear-gradient(135deg, #a259c3 0%, #ffe6fa 100%);
+  color: #fff;
+  box-shadow: 0 0 12px 2px #a259c3, 0 0 0 4px #ffd6f7 inset;
 }
 .c:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, #fffbe6 0%, #ffe066 100%);
+  color: #a259c3;
 }
 .egal:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, #ffe6fa 0%, #a259c3 100%);
+  color: #ffe066;
+}
+
+/* Ajout d'étoiles kawaii autour de la calculatrice */
+.calculatrice::before,
+.calculatrice::after {
+  content: "★";
+  position: absolute;
+  font-size: 2.2em;
+  color: #ffe066;
+  opacity: 0.7;
+  pointer-events: none;
+}
+.calculatrice::before {
+  top: -28px;
+  left: 18px;
+  transform: rotate(-15deg);
+}
+.calculatrice::after {
+  bottom: -28px;
+  right: 18px;
+  transform: rotate(12deg);
 }
